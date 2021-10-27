@@ -24,6 +24,7 @@ import com.nimbusds.openid.connect.sdk.validators.IDTokenValidator;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import io.swagger.annotations.*;
+import org.apache.commons.lang3.StringUtils;
 import org.dozer.DozerBeanMapperSingletonWrapper;
 import org.dozer.Mapper;
 import org.polarsys.eplmp.core.common.Account;
@@ -318,11 +319,21 @@ public class AuthResource {
         } catch (ProvidedAccountNotFoundException e) {
             // If not : create an account.
             // get an available login
-            // String login = findAvailableLogin(sub);
-            String login = oAuthManager.findAvailableLogin(sub);
-
+        	
+        	String login = (String) validate.getClaim("preferred_username");
+        	if (StringUtils.isEmpty(login)){
+        		//If no preffered_username in claim then use the sub
+        		login = oAuthManager.findAvailableLogin(sub);
+        	}
+        	
+        	String name = (String) validate.getClaim("given_name");
+        	if(StringUtils.isEmpty(name)) {
+        		//if given_name is not available use the same as login.
+        		name = login;
+        	}
+        	
             try {
-                account = accountManager.createAccount(login, sub, email, "en", UUID.randomUUID().toString(), "CET");
+                account = accountManager.createAccount(login, name, email, "en", UUID.randomUUID().toString(), "CET");
                 oAuthManager.createProvidedAccount(account, sub, provider);
             } catch (CreationException | AccountAlreadyExistsException e1) {
                 // should not happen as we check for login availability just before
