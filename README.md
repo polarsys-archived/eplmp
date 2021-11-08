@@ -1,10 +1,10 @@
-<h1> Welcome to the DocDokuPLM project</h1>
+# Welcome to the Eclipse Product Lifecycle Management Platform project
 
-## What is DocDokuPLM?
+## What is Eclipse Product Lifecycle Management Platform?
 
-DocDokuPLM is a high end Open Source PLM solution.
+Eclipse Product Lifecycle Management Platform is a high end Open Source PLM solution.
 
-## What does DocDokuPLM offer?
+## What does Eclipse Product Lifecycle Management Platform offer?
 
 * Document Management: Version control, workflows, templates, links
 * Product Structure: Search and filters the product structure
@@ -14,24 +14,6 @@ DocDokuPLM is a high end Open Source PLM solution.
 * Change Management: Track modifications
 * Data Visualization: Use your browser to explore your structures (WebGL), exchange with your colleagues or display your documents (Word, PDF, CAD...)
 
-## Project support
-
-The Project is lead by the DocDoku team.
-
-## Setting Up
-
-You have a full description of the [Installation Guide](https://github.com/docdoku/docdoku-plm/wiki/Installation-Guide).
-
-To know how to use the PLM, you can look at the [Quick Starter Guide](https://github.com/docdoku/docdoku-plm/wiki/Quick-Starter-Guide) or at the [User Guide](http://docdokuplm.com/docdoku-plm/user-guide/en/2.5/).
-
-## Coding
-
-You may fork or just clone the code on [GitHub](https://github.com/docdoku/docdoku-plm) and then compile and package it with Maven.
-
-You have more information in the [Development Guide](https://github.com/docdoku/docdoku-plm/wiki/Development-Guide).
-
 ## License
 
 Eclipse Public License - v 1.0
-
-## [Cloud Hosting](https://docdokuplm.net)
