@@ -1,3 +1,5 @@
+# THIS PROJECT HAS BEEN ARCHIVED
+
 # Welcome to the Eclipse Product Lifecycle Management Platform project
 
 ## What is Eclipse Product Lifecycle Management Platform?
